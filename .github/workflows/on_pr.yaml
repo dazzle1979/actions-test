@@ -16,6 +16,8 @@ jobs:
       - uses: actions/checkout@v3
    
       - uses: dazzle1979/actions-repo@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
         
 
       # - uses: LouisBrunner/checks-action@v1.1.1
