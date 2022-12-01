@@ -18,7 +18,7 @@ jobs:
       - name: Integration Tests
         uses: dazzle1979/actions-repo@main
         with:
-          secret: 'test123'
+          secret: ${{ secrets.API_KEY }}
         
 
       # - uses: LouisBrunner/checks-action@v1.1.1
