@@ -36,4 +36,4 @@ jobs:
           check_id: ${{ steps.integration-tests.outputs.check_id }}
           conclusion: failure
           output: |
-            {"summary": "Dit ging niet goed"}
+            {"summary": ${{ steps.integration-tests.outputs }}}
