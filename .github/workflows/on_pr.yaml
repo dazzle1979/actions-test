@@ -19,6 +19,7 @@ jobs:
         uses: dazzle1979/actions-repo@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          api_key: 'test123'
         
 
       # - uses: LouisBrunner/checks-action@v1.1.1
