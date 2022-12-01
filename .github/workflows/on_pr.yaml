@@ -13,34 +13,37 @@ jobs:
     environment: dev_environment
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+   
+      - uses: dazzle1979/actions-repo@main
+        
 
-      - uses: LouisBrunner/checks-action@v1.1.1
-        id: integration-tests
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          name: Integration tests
-          status: in_progress
+      # - uses: LouisBrunner/checks-action@v1.1.1
+      #   id: integration-tests
+      #   with:
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     name: Integration tests
+      #     status: in_progress
 
-      - uses: LouisBrunner/checks-action@v1.1.1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          check_id: ${{ steps.integration-tests.outputs.check_id }}
-          conclusion: failure
-          output: |
-            {"summary": "OK, er ging iets mis"}
+      # - uses: LouisBrunner/checks-action@v1.1.1
+      #   with:
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     check_id: ${{ steps.integration-tests.outputs.check_id }}
+      #     conclusion: failure
+      #     output: |
+      #       {"summary": "OK, er ging iets mis"}
 
-      - uses: LouisBrunner/checks-action@v1.1.1
-        id: run-integration-tests
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          name: Run integration tests
-          status: in_progress
+      # - uses: LouisBrunner/checks-action@v1.1.1
+      #   id: run-integration-tests
+      #   with:
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     name: Run integration tests
+      #     status: in_progress
 
-      - uses: LouisBrunner/checks-action@v1.1.1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          check_id: ${{ steps.run-integration-tests.outputs.check_id }}
-          conclusion: success
-          output: |
-            {"summary": "OK, geen problemen"}
+      # - uses: LouisBrunner/checks-action@v1.1.1
+      #   with:
+      #     token: ${{ secrets.GITHUB_TOKEN }}
+      #     check_id: ${{ steps.run-integration-tests.outputs.check_id }}
+      #     conclusion: success
+      #     output: |
+      #       {"summary": "OK, geen problemen"}
